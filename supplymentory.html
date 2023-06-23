@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sos Datasets</title>
+  <style>
+    .center-line {
+      height: 2px;
+      background-color: black;
+      margin: 0 auto;
+    }
+    .sub-line {
+      height: 1px;
+      background-color: black;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    .image-caption {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+
+    .V2A_image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    .V2A_audio-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 50px
+    }
+    .V2A_text-container {
+      align-items: center;
+      margin-right: 50px
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+  <h1> Sound of Story </h1>
+  <h1> Multi-modal Storytelling with Audio </h1>
+  <div class="center-line"></div>
+  <h2> Abstract </h2>
+  <div class="sub-line"></div>
+  <div class="image-container">
+    <img src="figures/table_of_data_contents.png" width="50%" height="300px">
+    <figcaption class="image-caption">Dataset preprocessing framework</figcaption>
+  </div>
+
+  <p><br></p>
+  <p>Storytelling is multi-modal in real world. When one tells a story, one may use all of visualization and sound along with story text as sound also conveys meaningful semantics of the story. Therefore, we introduce a new dataset, called Sound of Story, that has paired image and text sequences with corresponding sound or background music and to the best of our knowledge, this is the first attempt to provide all of the three modalities for a story. Our SoS dataset consists of 27,354 stories with 19.6 images per story and 984 hours of sound and background music. As benchmark tasks for the dataset, we propose retrieval tasks between modalitieis and audio generation task from image and text sequence and introduce strong baselines for them. The retrieval tasks focus on how much the model finds proper audio corresponding to image sequences or text information containing a story. The audio generation task goes further by examining whether appropriate audio can be generated from given story information. By proposing these benchmarks, we show that the audio can be used for story understanding.</p>
+
+  <h2> Data Samples </h2>
+  <div class="sub-line"></div>
+  <h3> SoS dataset </h3>
+  <p> 
+    We propose a new dataset called SoS (Sound of Story) dataset, consists of 27,354 audio-image-text pairs, 22,330 pairs are created from CMD (Condensed Movie Dataset) and 5,024 from LSMDC (Large Scale Movie Description Challenge) dataset. All modalities are extracted from approximately 3-minute movie clips, ensuring that each modality within a pair is extracted from the same clip to maintain a shared storyline. The image sequences were composed of sets of frames that represent the movie clip, while the audio provided the background sound specific to the clip, and the text included descriptions of the story related to the clip.</p>
+  
+  <div class="V2A_image-container">
+    <div class="V2A_text-container">
+      <p>0005_Chinato005</p>
+    </div>
+
+    <img src="0005_Chinato005.png" width="30%" height="500px">
+    <div class="V2A_audio-container">
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+    </div>
+  </div>
+
+
+  <h2> Image Audio Retrieval example </h2>
+  <div class="sub-line"></div>
+  <h3> 1. Video-Audio Retrieval </h3>
+  <div class="V2A_image-container">
+    <div class="V2A_text-container">
+      <p>0005_Chinato005</p>
+    </div>
+
+    <img src="0005_Chinato005.png" width="30%" height="500px">
+    <div class="V2A_audio-container">
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+    </div>
+  </div>
+
+  <h3> 2. Audio-Video Retrieval </h3>
+  <div class="V2A_image-container">
+    <div class="V2A_text-container">
+      <p>0005_Chinato005</p>
+    </div>
+
+    <img src="0005_Chinato005.png" width="30%" height="500px">
+    <div class="V2A_audio-container">
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+    </div>
+  </div>
+
+  <h3> 3. Text-Audio Retrieval </h3>
+  <div class="V2A_image-container">
+    <div class="V2A_text-container">
+      <p>0005_Chinato005</p>
+    </div>
+
+    <img src="0005_Chinato005.png" width="30%" height="500px">
+    <div class="V2A_audio-container">
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+    </div>
+  </div>
+
+  <h3> 4. Audio-Text Retrieval </h3>
+  <div class="V2A_image-container">
+    <div class="V2A_text-container">
+      <p>0005_Chinato005</p>
+    </div>
+
+    <img src="0005_Chinato005.png" width="30%" height="500px">
+    <div class="V2A_audio-container">
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+    </div>
+  </div>
+
+  <h2> Audio Generation </h2>
+  <div class="sub-line"></div>
+  <div class="V2A_image-container">
+    <div class="V2A_text-container">
+      <p>0005_Chinato005</p>
+    </div>
+
+    <img src="0005_Chinato005.png" width="30%" height="500px">
+    <div class="V2A_audio-container">
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+      <p><br></p>
+      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+    </div>
+  </div>
+
+
+
+</body>
+</html>
