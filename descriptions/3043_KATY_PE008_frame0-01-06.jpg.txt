@@ -1,1 +1,1 @@
- As the stylist works, SOMEONE<Katy> gazes into a mirror. SOMEONE<Katy> picks up her cellphone. SOMEONE<Katy> shrugs. Peering at the phone, SOMEONE<Katy> holds her hand to her head. Elsewhere, a mass of people moves through a parking lot.
+ As the stylist works, SOMEONE&lt;Katy&gt; gazes into a mirror. SOMEONE&lt;Katy&gt; picks up her cellphone. SOMEONE&lt;Katy&gt; shrugs. Peering at the phone, SOMEONE&lt;Katy&gt; holds her hand to her head. Elsewhere, a mass of people moves through a parking lot.
