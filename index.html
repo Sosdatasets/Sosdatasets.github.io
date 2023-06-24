@@ -1,302 +1,325 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Sos Datasets</title>
-  <style>
-    .center-line {
-      height: 2px;
-      background-color: black;
-      margin: 0 auto;
-    }
-    .sub-line {
-      height: 1px;
-      background-color: black;
-      margin: 0 auto;
-      margin-bottom: 30px;
-    }
-    h1 {
-      text-align: center;
-    }
+	<head>
+		<title>Sos Datasets</title>
+		<style>
+			.center-line {
+			  height: 2px;
+			  background-color: black;
+			  margin: 0 auto;
+			}
+			.sub-line {
+			  height: 1px;
+			  background-color: black;
+			  margin: 0 auto;
+			  margin-bottom: 30px;
+			}
+			h1 {
+			  text-align: center;
+			}
 
-    .image-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
-    .image-caption {
-      position: absolute;
-      margin-top: 20px;
-      bottom: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-
-    .sample_image-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      margin-right: 30px;
-    }
-    .sample_audio-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-left: 50px
-    }
-    .sample_text-container {
-      align-items: center;
-      margin-right: 50px
-    }
+			.image-container {
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+			  text-align: center;
+			  position: relative;
+			}
+			.image-caption {
+			  position: absolute;
+			  margin-top: 20px;
+			  bottom: -30px;
+			  left: 50%;
+			  transform: translateX(-50%);
+			}
 
 
-    .V2A_image-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
-    .V2A_audio-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-left: 50px
-    }
-    .V2A_text-container {
-      align-items: center;
-      margin-right: 50px
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+			.sample_image-container {
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+			  text-align: center;
+			  position: relative;
+			  margin-right: 30px;
+			}
+			.sample_audio-container {
+			  display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin-left: 50px
+			}
+			.sample_text-container {
+			  align-items: center;
+			  margin-right: 50px
+			}
 
 
-    .sample_col1 {
-      width: 15%;
-    }
+			.V2A_image-container {
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+			  text-align: center;
+			  position: relative;
+			}
+			.V2A_audio-container {
+			  display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin-left: 50px
+			}
+			.V2A_text-container {
+			  align-items: center;
+			  margin-right: 50px
+			}
 
-    .sample_col2 {
-      width: 25%;
-    }
-
-    .sample_col3 {
-      width: 60%;
-    }
-
-    table td {
-      width: 25%;
-      padding: 10px;
-      border: 1px solid #000;
-      text-align: center;
-      vertical-align: middle;
-    }
-
-
-  </style>
-</head>
-
-<body>
-  <h1> Sound of Story </h1>
-  <h1> Multi-modal Storytelling with Audio </h1>
-  <div class="center-line"></div>
-  <h2> Abstract </h2>
-  <div class="sub-line"></div>
-  <div class="image-container">
-    <img src="https://github.com/Sosdatasets/Sosdatasets.github.io/blob/master/figures/table_of_data_contents.png?raw=true" width="50%" height="300px">
-    <figcaption class="image-caption">Dataset preprocessing framework</figcaption>
-  </div>
-  <p><br></p>
-  <p>Storytelling is multi-modal in real world. When one tells a story, one may use all of visualization and sound along with story text as sound also conveys meaningful semantics of the story. Therefore, we introduce a new dataset, called Sound of Story, that has paired image and text sequences with corresponding sound or background music and to the best of our knowledge, this is the first attempt to provide all of the three modalities for a story. Our SoS dataset consists of 27,354 stories with 19.6 images per story and 984 hours of sound and background music. As benchmark tasks for the dataset, we propose retrieval tasks between modalitieis and audio generation task from image and text sequence and introduce strong baselines for them. The retrieval tasks focus on how much the model finds proper audio corresponding to image sequences or text information containing a story. The audio generation task goes further by examining whether appropriate audio can be generated from given story information. By proposing these benchmarks, we show that the audio can be used for story understanding.</p>
-
-  <h2> Data Samples </h2>
-  <div class="sub-line"></div>
-  <h3> SoS dataset </h3>
-  <p> 
-    We propose a new dataset called SoS (Sound of Story) dataset, consists of 27,354 audio-image-text pairs, 22,330 pairs are created from CMD (Condensed Movie Dataset) and 5,024 from LSMDC (Large Scale Movie Description Challenge) dataset. All modalities are extracted from approximately 3-minute movie clips, ensuring that each modality within a pair is extracted from the same clip to maintain a shared storyline. The image sequences were composed of sets of frames that represent the movie clip, while the audio provided the background sound specific to the clip, and the text included descriptions of the story related to the clip.</p>
-  
-  <table>
-    <tr>
-      <td class="sample_col1">
-        <div class="sample_text-container">
-          <p>3037_IRON_MA005</p>
-        </div>
-      </td>
-      <td class="sample_col2">
-        <img src="https://github.com/Sosdatasets/Sosdatasets.github.io/blob/master/SampleData/3037_IRON_MA005.jpg?raw=true" width="80%" height="300px">
-        <audio src="SampleData/3037_IRON_MA005.mp3" controls></audio>
-      </td>
-
-      <td class="sample_col3">
-        <div class="sample_text-container">
-          <p>In Moscow, snowfall blankets a city street.A dark-haired man steps through an archway and into a dark passageway, where he hands SOMEONE&lt;Ivan&gt; an envelope.SOMEONE&lt;Ivan&gt; tucks the envelope in his jacket and pays the man, who leaves.SOMEONE&lt;Ivan&gt; glances out toward a sidewalk, then steps back into the passageway.He&lt;Ivan&gt; takes out the envelope and opens it.He&lt;Ivan&gt; pulls out a passport and a ticket.Elsewhere, Pepper enters SOMEONE&lt;Tony&gt;'s home gym, where SOMEONE&lt;Tony&gt; and SOMEONE&lt;Happy&gt; box in a ring.SOMEONE&lt;Happy&gt;, wearing protective headgear, swings at SOMEONE&lt;Tony&gt; and misses.SOMEONE&lt;Tony&gt; jabs at SOMEONE&lt;Happy&gt;, then elbows him in the face.The men turn and gaze at a young woman with long dark-brown hair, who walks into the gym carrying paperwork.The woman hands SOMEONE&lt;Pepper&gt; a pen.SOMEONE&lt;Happy&gt; taps SOMEONE&lt;Tony&gt;'s head.SOMEONE&lt;Tony&gt; kicks SOMEONE&lt;Happy&gt;, who sails backward into a corner post.SOMEONE&lt;Pepper&gt; signs a paper.SOMEONE&lt;Natalie&gt; sashays over to the ring, ducks through the ropes, and steps onto the platform.Watching her, SOMEONE&lt;Tony&gt; drinks chlorophyll from a sports bottle.SOMEONE&lt;Natalie&gt; stares at SOMEONE&lt;Tony&gt;, who lowers the bottle.SOMEONE&lt;Tony&gt; glances down, then turns to SOMEONE&lt;Happy&gt;.SOMEONE&lt;Happy&gt; approaches SOMEONE&lt;Natalie&gt;.SOMEONE&lt;Tony&gt; steps out of the ring and sits beside SOMEONE&lt;Pepper&gt;.SOMEONE&lt;Tony&gt; taps on a glass table top.Web pages appear.In a photo, SOMEONE&lt;Natalie&gt;, wearing a dark bikini, lies on her side.From the ring, SOMEONE&lt;Natalie&gt; glances at SOMEONE&lt;Tony&gt;.SOMEONE&lt;Happy&gt; jabs at SOMEONE&lt;Natalie&gt;, who grabs his glove and pulls his arm, flipping him onto his back.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="sample_col1">
-        <div class="sample_text-container">
-          <p>3042_KARATE_022</p>
-        </div>
-      </td>
-      <td class="sample_col2">
-        <img src="https://github.com/Sosdatasets/Sosdatasets.github.io/blob/master/SampleData/3042_KARATE_022.jpg?raw=true" width="80%" height="300px">
-        <audio src="SampleData/3042_KARATE_022.mp3" controls></audio>
-      </td>
-      <td class="sample_col3">
-        <div class="sample_text-container">
-          <p>He&lt;Dre&gt; has had enough.SOMEONE&lt;Cheng&gt; glares.His friends grab him.Glaring, SOMEONE&lt;Cheng&gt; shakes them off.SOMEONE&lt;Cheng&gt; faces the fallen American boy.who looks up, his face grimacing helplessly.SOMEONE&lt;Cheng&gt; lunges with a punch, but a hand grabs his wrist.SOMEONE&lt;Han&gt; bends SOMEONE&lt;Cheng&gt;'s hand down and in toward the wrist.He&lt;Han&gt; stares at the boy.He&lt;Han&gt; shoves SOMEONE&lt;Cheng&gt; back into his group of friends.SOMEONE&lt;Cheng&gt; gapes.SOMEONE&lt;Han&gt; crouches to SOMEONE&lt;Dre&gt;.Two of SOMEONE&lt;Cheng&gt;'s older cohorts step forward. He&lt;Cheng&gt; stops them.then advances on  SOMEONE&lt;Han&gt; himself.He&lt;Cheng&gt; delivers a kick, but  SOMEONE&lt;Han&gt; intercepts his ankle.The man lifts SOMEONE&lt;Cheng&gt;'s leg, then shoves him back.As SOMEONE&lt;Cheng&gt; falls, one of the other boys attacks.SOMEONE&lt;Han&gt; deftly blocks every strike.Two boys' fists fly toward  SOMEONE&lt;Han&gt;'s face, and he&lt;Han&gt; bends backwards evading them.SOMEONE&lt;Han&gt; waits in a fighting stance, his wrists crossed in an X shape.He&lt;Han&gt; blocks a strike and holds a tall boy against his body.As a younger boy kicks,  SOMEONE&lt;Han&gt; blocks the attack with the tall boy.He&lt;Han&gt; pulls the young kicker in, uses him as a shield against the tall boy.then flips the younger into a trash barrel.SOMEONE&lt;Cheng&gt; and the others rush SOMEONE&lt;Han&gt;, who deflects their blows.</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="sample_col1">
-        <div class="sample_text-container">
-          <p>4935_Harry_P021</p>
-        </div>
-      </td>
-      <td class="sample_col2">
-        <img src="https://github.com/Sosdatasets/Sosdatasets.github.io/blob/master/SampleData/4935_Harry_P021.jpg?raw=true" width="80%" height="300px">
-        <audio src="SampleData/4935_Harry_P021.mp3" controls></audio>
-      </td>
-
-      <td class="sample_col3">
-        <div class="sample_text-container">
-          <p>"Harry, Hermione and Griphook search for a Horcrux inside a vault at Gringott's Wizarding Bank."</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="sample_col1">
-        <div class="sample_text-container">
-          <p>5446_Mr_Smi010</p>
-        </div>
-      </td>
-      <td class="sample_col2">
-        <img src="https://github.com/Sosdatasets/Sosdatasets.github.io/blob/master/SampleData/5446_Mr_Smi010.jpg?raw=true" width="80%" height="300px">
-        <audio src="SampleData/5446_Mr_Smi010.mp3" controls></audio>
-      </td>
-
-      <td class="sample_col3">
-        <div class="sample_text-container">
-          <p>Governor Hubert Hopper describes the genius of appointing simpleton Jefferson Smith as a the state's next Senator.</p>
-        </div>
-      </td>
-    </tr>
-  </table>
-  <!-- </div> -->
+			table {
+			  width: 100%;
+			  border-collapse: collapse;
+			}
 
 
-  <h2> Image Audio Retrieval example </h2>
-  <div class="sub-line"></div>
-  <h3> 1. Video-Audio Retrieval </h3>
-  <div class="V2A_image-container">
-    <div class="V2A_text-container">
-      <p>0005_Chinato005</p>
-    </div>
+			.sample_col1 {
+			  width: 15%;
+			}
 
-    <img src="0005_Chinato005.png" width="30%" height="500px">
-    <div class="V2A_audio-container">
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-    </div>
-  </div>
+			.sample_col2 {
+			  width: 25%;
+			}
 
-  <h3> 2. Audio-Video Retrieval </h3>
-  <div class="V2A_image-container">
-    <div class="V2A_text-container">
-      <p>0005_Chinato005</p>
-    </div>
+			.sample_col3 {
+			  width: 60%;
+			}
 
-    <img src="0005_Chinato005.png" width="30%" height="500px">
-    <div class="V2A_audio-container">
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-    </div>
-  </div>
+			table td {
+			  width: 25%;
+			  padding: 10px;
+			  border: 1px solid #000;
+			  text-align: center;
+			  vertical-align: middle;
+			}
+		</style>
+	</head>
 
-  <h3> 3. Text-Audio Retrieval </h3>
-  <div class="V2A_image-container">
-    <div class="V2A_text-container">
-      <p>0005_Chinato005</p>
-    </div>
+	<body>
+		<h1>Sound of Story</h1>
+		<h1>Multi-modal Storytelling with Audio</h1>
+		<div class="center-line"></div>
+		<h2>Abstract</h2>
+		<div class="sub-line"></div>
+		<div class="image-container">
+			<img src="https://github.com/Sosdatasets/Sosdatasets.github.io/blob/master/figures/table_of_data_contents.png?raw=true" width="50%" height="300px" alt />
+			<figcaption class="image-caption">Dataset preprocessing framework</figcaption>
+		</div>
+		<p><br /></p>
+		<p>
+			Storytelling is multi-modal in real world. When one tells a story, one may use all of visualization and sound along with story text as sound also conveys meaningful semantics of the story. Therefore, we introduce a new dataset,
+			called Sound of Story, that has paired image and text sequences with corresponding sound or background music and to the best of our knowledge, this is the first attempt to provide all of the three modalities for a story. Our SoS
+			dataset consists of 27,354 stories with 19.6 images per story and 984 hours of sound and background music. As benchmark tasks for the dataset, we propose retrieval tasks between modalitieis and audio generation task from image
+			and text sequence and introduce strong baselines for them. The retrieval tasks focus on how much the model finds proper audio corresponding to image sequences or text information containing a story. The audio generation task
+			goes further by examining whether appropriate audio can be generated from given story information. By proposing these benchmarks, we show that the audio can be used for story understanding.
+		</p>
 
-    <img src="0005_Chinato005.png" width="30%" height="500px">
-    <div class="V2A_audio-container">
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-    </div>
-  </div>
+		<h2>Data Samples</h2>
+		<div class="sub-line"></div>
+		<h3>SoS dataset</h3>
+		<p>
+			We propose a new dataset called SoS (Sound of Story) dataset, consists of 27,354 audio-image-text pairs, 22,330 pairs are created from CMD (Condensed Movie Dataset) and 5,024 from LSMDC (Large Scale Movie Description Challenge)
+			dataset. All modalities are extracted from approximately 3-minute movie clips, ensuring that each modality within a pair is extracted from the same clip to maintain a shared storyline. The image sequences were composed of sets
+			of frames that represent the movie clip, while the audio provided the background sound specific to the clip, and the text included descriptions of the story related to the clip.
+		</p>
 
-  <h3> 4. Audio-Text Retrieval </h3>
-  <div class="V2A_image-container">
-    <div class="V2A_text-container">
-      <p>0005_Chinato005</p>
-    </div>
+		<table>
+			<tr>
+				<td class="sample_col1">
+					<div class="sample_text-container">
+						<p>3037_IRON_MA005</p>
+					</div>
+				</td>
+				<td class="sample_col2">
+					<img src="https://github.com/Sosdatasets/Sosdatasets.github.io/blob/master/SampleData/3037_IRON_MA005.jpg?raw=true" width="80%" height="300px" />
+					<audio src="SampleData/3037_IRON_MA005.mp3" controls></audio>
+				</td>
 
-    <img src="0005_Chinato005.png" width="30%" height="500px">
-    <div class="V2A_audio-container">
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-    </div>
-  </div>
+				<td class="sample_col3">
+					<div class="sample_text-container">
+						<p>
+							In Moscow, snowfall blankets a city street.A dark-haired man steps through an archway and into a dark passageway, where he hands SOMEONE&lt;Ivan&gt; an envelope.SOMEONE&lt;Ivan&gt; tucks the envelope in his
+							jacket and pays the man, who leaves.SOMEONE&lt;Ivan&gt; glances out toward a sidewalk, then steps back into the passageway.He&lt;Ivan&gt; takes out the envelope and opens it.He&lt;Ivan&gt; pulls out a passport
+							and a ticket.Elsewhere, Pepper enters SOMEONE&lt;Tony&gt;'s home gym, where SOMEONE&lt;Tony&gt; and SOMEONE&lt;Happy&gt; box in a ring.SOMEONE&lt;Happy&gt;, wearing protective headgear, swings at
+							SOMEONE&lt;Tony&gt; and misses.SOMEONE&lt;Tony&gt; jabs at SOMEONE&lt;Happy&gt;, then elbows him in the face.The men turn and gaze at a young woman with long dark-brown hair, who walks into the gym carrying
+							paperwork.The woman hands SOMEONE&lt;Pepper&gt; a pen.SOMEONE&lt;Happy&gt; taps SOMEONE&lt;Tony&gt;'s head.SOMEONE&lt;Tony&gt; kicks SOMEONE&lt;Happy&gt;, who sails backward into a corner
+							post.SOMEONE&lt;Pepper&gt; signs a paper.SOMEONE&lt;Natalie&gt; sashays over to the ring, ducks through the ropes, and steps onto the platform.Watching her, SOMEONE&lt;Tony&gt; drinks chlorophyll from a sports
+							bottle.SOMEONE&lt;Natalie&gt; stares at SOMEONE&lt;Tony&gt;, who lowers the bottle.SOMEONE&lt;Tony&gt; glances down, then turns to SOMEONE&lt;Happy&gt;.SOMEONE&lt;Happy&gt; approaches
+							SOMEONE&lt;Natalie&gt;.SOMEONE&lt;Tony&gt; steps out of the ring and sits beside SOMEONE&lt;Pepper&gt;.SOMEONE&lt;Tony&gt; taps on a glass table top.Web pages appear.In a photo, SOMEONE&lt;Natalie&gt;, wearing a
+							dark bikini, lies on her side.From the ring, SOMEONE&lt;Natalie&gt; glances at SOMEONE&lt;Tony&gt;.SOMEONE&lt;Happy&gt; jabs at SOMEONE&lt;Natalie&gt;, who grabs his glove and pulls his arm, flipping him onto his
+							back.
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="sample_col1">
+					<div class="sample_text-container">
+						<p>3042_KARATE_022</p>
+					</div>
+				</td>
+				<td class="sample_col2">
+					<img src="https://github.com/Sosdatasets/Sosdatasets.github.io/blob/master/SampleData/3042_KARATE_022.jpg?raw=true" width="80%" height="300px" />
+					<audio src="SampleData/3042_KARATE_022.mp3" controls></audio>
+				</td>
+				<td class="sample_col3">
+					<div class="sample_text-container">
+						<p>
+							He&lt;Dre&gt; has had enough.SOMEONE&lt;Cheng&gt; glares.His friends grab him.Glaring, SOMEONE&lt;Cheng&gt; shakes them off.SOMEONE&lt;Cheng&gt; faces the fallen American boy.who looks up, his face grimacing
+							helplessly.SOMEONE&lt;Cheng&gt; lunges with a punch, but a hand grabs his wrist.SOMEONE&lt;Han&gt; bends SOMEONE&lt;Cheng&gt;'s hand down and in toward the wrist.He&lt;Han&gt; stares at the boy.He&lt;Han&gt;
+							shoves SOMEONE&lt;Cheng&gt; back into his group of friends.SOMEONE&lt;Cheng&gt; gapes.SOMEONE&lt;Han&gt; crouches to SOMEONE&lt;Dre&gt;.Two of SOMEONE&lt;Cheng&gt;'s older cohorts step forward. He&lt;Cheng&gt;
+							stops them.then advances on SOMEONE&lt;Han&gt; himself.He&lt;Cheng&gt; delivers a kick, but SOMEONE&lt;Han&gt; intercepts his ankle.The man lifts SOMEONE&lt;Cheng&gt;'s leg, then shoves him back.As
+							SOMEONE&lt;Cheng&gt; falls, one of the other boys attacks.SOMEONE&lt;Han&gt; deftly blocks every strike.Two boys' fists fly toward SOMEONE&lt;Han&gt;'s face, and he&lt;Han&gt; bends backwards evading
+							them.SOMEONE&lt;Han&gt; waits in a fighting stance, his wrists crossed in an X shape.He&lt;Han&gt; blocks a strike and holds a tall boy against his body.As a younger boy kicks, SOMEONE&lt;Han&gt; blocks the
+							attack with the tall boy.He&lt;Han&gt; pulls the young kicker in, uses him as a shield against the tall boy.then flips the younger into a trash barrel.SOMEONE&lt;Cheng&gt; and the others rush SOMEONE&lt;Han&gt;,
+							who deflects their blows.
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="sample_col1">
+					<div class="sample_text-container">
+						<p>4935_Harry_P021</p>
+					</div>
+				</td>
+				<td class="sample_col2">
+					<img src="https://github.com/Sosdatasets/Sosdatasets.github.io/blob/master/SampleData/4935_Harry_P021.jpg?raw=true" width="80%" height="300px" />
+					<audio src="SampleData/4935_Harry_P021.mp3" controls></audio>
+				</td>
 
-  <h2> Audio Generation </h2>
-  <div class="sub-line"></div>
-  <div class="V2A_image-container">
-    <div class="V2A_text-container">
-      <p>0005_Chinato005</p>
-    </div>
+				<td class="sample_col3">
+					<div class="sample_text-container">
+						<p>"Harry, Hermione and Griphook search for a Horcrux inside a vault at Gringott's Wizarding Bank."</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="sample_col1">
+					<div class="sample_text-container">
+						<p>5446_Mr_Smi010</p>
+					</div>
+				</td>
+				<td class="sample_col2">
+					<img src="https://github.com/Sosdatasets/Sosdatasets.github.io/blob/master/SampleData/5446_Mr_Smi010.jpg?raw=true" width="80%" height="300px" />
+					<audio src="SampleData/5446_Mr_Smi010.mp3" controls></audio>
+				</td>
 
-    <img src="0005_Chinato005.png" width="30%" height="500px">
-    <div class="V2A_audio-container">
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-      <p><br></p>
-      <audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
-    </div>
-  </div>
+				<td class="sample_col3">
+					<div class="sample_text-container">
+						<p>Governor Hubert Hopper describes the genius of appointing simpleton Jefferson Smith as a the state's next Senator.</p>
+					</div>
+				</td>
+			</tr>
+		</table>
 
+		<h2>Image Audio Retrieval example</h2>
+		<div class="sub-line"></div>
+		<h3>1. Video-Audio Retrieval</h3>
+		<div class="V2A_image-container">
+			<div class="V2A_text-container">
+				<p>0005_Chinato005</p>
+			</div>
 
+			<img src="0005_Chinato005.png" width="30%" height="500px" />
+			<div class="V2A_audio-container">
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+			</div>
+		</div>
 
-</body>
+		<h3>2. Audio-Video Retrieval</h3>
+		<div class="V2A_image-container">
+			<div class="V2A_text-container">
+				<p>0005_Chinato005</p>
+			</div>
+
+			<img src="0005_Chinato005.png" width="30%" height="500px" />
+			<div class="V2A_audio-container">
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+			</div>
+		</div>
+
+		<h3>3. Text-Audio Retrieval</h3>
+		<div class="V2A_image-container">
+			<div class="V2A_text-container">
+				<p>0005_Chinato005</p>
+			</div>
+
+			<img src="0005_Chinato005.png" width="30%" height="500px" />
+			<div class="V2A_audio-container">
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+			</div>
+		</div>
+
+		<h3>4. Audio-Text Retrieval</h3>
+		<div class="V2A_image-container">
+			<div class="V2A_text-container">
+				<p>0005_Chinato005</p>
+			</div>
+
+			<img src="0005_Chinato005.png" width="30%" height="500px" />
+			<div class="V2A_audio-container">
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+			</div>
+		</div>
+
+		<h2>Audio Generation</h2>
+		<div class="sub-line"></div>
+		<div class="V2A_image-container">
+			<div class="V2A_text-container">
+				<p>0005_Chinato005</p>
+			</div>
+
+			<img src="0005_Chinato005.png" width="30%" height="500px" />
+			<div class="V2A_audio-container">
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+				<p><br /></p>
+				<audio src="0010_Frau_Oh003/1061_Harry_P018.mp3" controls></audio>
+			</div>
+		</div>
+	</body>
 </html>
+
